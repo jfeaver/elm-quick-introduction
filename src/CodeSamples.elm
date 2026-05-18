@@ -11,9 +11,19 @@ fortytwo =
     multiply 7 6
 
 
+{-| Lists of data looks familiar
+-}
+data =
+    [ 1, 2, 3, 4 ]
+
+
+dataByConstructor =
+    List.range 1 4
+
+
 {-| Pass functions as arguments to other functions.
 -}
-doubled =
+doubleList =
     let
         -- Partially apply a function by passing only some of its arguments.
         -- Then give that function a new name.
@@ -24,4 +34,4 @@ doubled =
 
 
 result =
-    doubled (List.range 1 4)
+    doubleList data

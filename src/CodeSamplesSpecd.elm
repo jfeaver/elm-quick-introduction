@@ -13,13 +13,26 @@ fortytwo =
     multiply 7 6
 
 
+{-| Lists of data looks familiar
+-}
+data : List Int
+data =
+    [ 1, 2, 3, 4 ]
+
+
+dataByConstructor : List Int
+dataByConstructor =
+    List.range 1 4
+
+
 {-| Pass functions as arguments to other functions.
 -}
-doubled : List number -> List number
-doubled =
+doubleList : List number -> List number
+doubleList =
     let
         -- Partially apply a function by passing only some of its arguments.
         -- Then give that function a new name.
+        double : number -> number
         double =
             multiply 2
     in
@@ -28,4 +41,4 @@ doubled =
 
 result : List Int
 result =
-    doubled (List.range 1 4)
+    doubleList data
